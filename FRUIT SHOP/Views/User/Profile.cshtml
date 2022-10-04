@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+}
+@model Users
+
+<h1 class="badge text-dark badge-info rounded badge-pill">Welcome @Model.Name</h1>
+
+<div class="row col-md-6  mt-3">
+    <input type="hidden" asp-for="Id" />
+    <div class="col">
+        <label class="form-label">Name:<strong>@Model.Name</strong></label>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Email:<strong>@Model.Email</strong></label>
+    </div>
+    <div class="col">
+        <label class="form-label">Phone Number:<strong>@Model.PhoneNumber</strong></label>
+    </div>
+</div>
+
