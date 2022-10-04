@@ -20,6 +20,11 @@ builder.Services.AddDbContext<ApplicationContext> (options=>
 
 builder.Services.AddSession();
 //=======
+
+//add RezorPages
+
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,6 +41,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseSession();
 app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

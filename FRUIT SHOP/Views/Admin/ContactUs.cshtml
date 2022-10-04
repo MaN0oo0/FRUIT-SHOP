@@ -2,9 +2,11 @@
 @{
     ViewData["Title"] = "ContactUs";
     Layout = "~/Views/MainLayouts/CustomLayout.cshtml";
+    Users data = ViewBag.user;
+
 }
 
-
+@model ContactUs
 <!-- contact section -->
 <section class="contact_section layout_padding">
     <div class="container-fluid">
@@ -22,20 +24,26 @@
         <div class="layout_padding2-top">
             <div class="row">
                 <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1">
-                    <form action="">
+                    <form asp-action="ContactUs" asp-controller="Admin" method="post">
+              
+	
+		 
+
+                        <input type="hidden" asp-for="@data.Id" />
+             
                         <div class="contact_form-container">
                             <div>
                                 <div>
-                                    <input type="text" placeholder="Full Name" />
+                                    <input type="text" placeholder="Full Name" asp-for="@data.Name" />
                                 </div>
                                 <div>
-                                    <input type="email" placeholder="Email" />
+                                    <input type="email" placeholder="Email" asp-for="@data.Email" />
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Phone Number" />
+                                    <input type="text" placeholder="Phone Number" asp-for="@data.PhoneNumber" />
                                 </div>
                                 <div>
-                                    <input type="text" class="message_input" placeholder="Message" />
+                                    <input type="text" class="message_input" placeholder="Message" asp-for="Message" />
                                 </div>
                                 <div>
                                     <button type="submit">
@@ -49,7 +57,7 @@
                 <div class="col-md-6 px-0">
                     <div class="map_container">
                         <div class="map-responsive">
-                          
+
                         </div>
                     </div>
                 </div>

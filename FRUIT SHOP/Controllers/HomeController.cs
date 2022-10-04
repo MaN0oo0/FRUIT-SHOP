@@ -15,7 +15,7 @@ namespace FRUIT_SHOP.Controllers
 
         public IActionResult Index()
         {
-            
+            ViewBag.Users = db.users.ToList();
             return View();
         }
 

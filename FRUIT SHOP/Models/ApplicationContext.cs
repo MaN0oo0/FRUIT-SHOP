@@ -12,6 +12,7 @@ namespace FRUIT_SHOP.Models
         {
 
         }
+   
      public DbSet<TestMonial> testMonials { get; set; }
     public DbSet<OurFruit> ourFruits { get; set; }
     public DbSet<Users> users { get; set; }

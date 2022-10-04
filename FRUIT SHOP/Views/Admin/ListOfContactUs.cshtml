@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "ListOfContactUs";
+    Layout = "~/Views/MainLayouts/CustomLayout.cshtml";
+}
+@model List<ContactUs>
+<h1>ListOfContactUs</h1>
+<div class="container mt-4">
+
+
+@foreach (var item in Model)
+{
+
+    <div class="card" style="width: 18rem;">
+    
+        <div class="card-body">
+            <h5 class="card-title">@item.user.Name</h5>
+            <p class="card-text">@item.Message</p>
+            @if (Context.Session.GetInt32("UserId").GetValueOrDefault() == 1)
+            {
+
+                <a href="#" class="btn btn-danger">Delete</a>
+            }
+
+        </div>
+    </div>
+}
+</div>

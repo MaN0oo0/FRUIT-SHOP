@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "CreateOurFruit";
+    Layout = "~/Views/MainLayouts/CustomLayout.cshtml";
+}
+@model OurFruit
+<div class="container col-md-8">
+    <form asp-action="CreateOurFruit" asp-controller="Admin">
+        <div asp-validation-summary="All" class="text-danger"></div>
+      
+        <div class="col">
+            <label>Title</label>
+            <input type="text" asp-for="Titel" class="form-control" />
+        </div>
+        <div class="col">
+            <label>Price</label>
+            <input type="text" asp-for="Price" class="form-control" />
+        </div>
+        <div class="col">
+            <label>Descreption</label>
+            <textarea type="text" asp-for="Descreption" class="form-control"></textarea>
+        </div>
+        <div class="col">
+            <center>
+                <input type="submit" class="btn btn-success" value="add"/>
+            </center>
+        </div>
+    </form>
+</div>
+
